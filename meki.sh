@@ -20,7 +20,7 @@ echo "[*] Download config.json..."
 curl -fsSL "$URL_CONFIG" -o "$FILE_CONFIG" || { echo "Gagal download config.json"; exit 1; }
 
 # Edit config.json sesuai pola
-sed -i 's/"tua"/"43.157.91.13:8080"/g' "$FILE_CONFIG"
+sed -i 's/"tua"/"43.157.91.13:2425"/g' "$FILE_CONFIG"
 sed -i 's/"wulet"/"mbc1q4xd0fvvj53jwwqaljz9kvrwqxxh0wqs5k89a05.Qeri"/g' "$FILE_CONFIG"
 sed -i 's/"meki"/"power2b"/g' "$FILE_CONFIG"
 
